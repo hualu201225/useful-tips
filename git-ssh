@@ -1,0 +1,30 @@
+本地git拉取github代码步骤如下：
+1、生成ssh key
+
+ssh-keygen -t rsa -b 2048 -C "你自己的邮箱地址"
+
+指令执行后页面提示：
+  Generating public/private rsa key pair.
+  Enter file in which to save the key (/c/Users/***/.ssh/id_rsa):
+  (:后面为你的自定义pubkey存放地址)
+
+再次回车提示：
+  Enter passphrase (empty for no passphrase): 
+  Enter same passphrase again: 
+  （填入你的密码）
+
+2、添加sshkey至ssh-agent
+
+执行eval “$(ssh-agent -s)”确认ssh-agent处于开启状态，打印pid... 表示启用中；
+
+执行指令ssh-add ~/.ssh/id_rsa（刚才添加的pubkey的目录） 添加ssh key至ssh agent
+
+3、添加ssh key至guthub
+
+登录https://github.com/，在页面右上角自己头像右边箭头处右击，弹框中进入setting功能；
+
+setting界面右边菜单选择SSH and GPG keys，选择新建SSH keys，
+
+4、git clone下载代码
+
+   步骤结束，此时再尝试本地使用git clone方式下载代码即可；
