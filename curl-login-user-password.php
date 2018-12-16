@@ -23,8 +23,8 @@
     }
     //设置post数据
     $post = array(
-            "username" => "13018901626",
-            "password" => "Ths12138",
+            "username" => "****",
+            "password" => "****",
     );
 
     //登录地址
